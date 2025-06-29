@@ -1,0 +1,409 @@
+/* ===================
+   General Styles
+=================== */
+html, body {
+  overflow-x: hidden !important;
+  -webkit-user-select: none !important;     /* Disable text selection */
+  -ms-user-select: none !important;
+  user-select: none !important;
+
+  -webkit-touch-callout: none !important;   /* Disable long press */
+  touch-action: pan-x pan-y !important;     /* Allow scroll but no zoom */
+
+   touch-action: manipulation;
+  -ms-touch-action: manipulation !important; /* for older IE/Edge */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f7f7f7;
+}
+
+.hidden {
+  display: none !important;
+} 
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 15px 0;
+  width: 100%;
+}
+
+/* ===================
+   Header
+=================== */
+header {
+  padding: 1em;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+}
+
+nav {
+  margin-top: 1em;
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+nav span {
+  color: #888;
+  cursor: pointer;
+}
+
+nav .active {
+  color: black;
+  border-bottom: 2px solid red;
+}
+
+/* ===================
+   Menu
+=================== */
+.menu-section {
+  padding: 1em;
+}
+
+.menu-item {
+  background: white;
+  margin-bottom: 1em;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.menu-item:hover {
+  transform: scale(1.01);
+}
+
+.menu-item img {
+  width: 100px;
+  border-radius: 10px;
+}
+
+.add-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: #ff3366;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+}
+
+/* ===================
+   Cart
+=================== */
+.cart {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ff3366;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  align-items: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  animation: slideUp 0.3s ease-in-out;
+}
+
+.cart button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#cart-count {
+  background-color: white;
+  color: #ff3366;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  text-align: center;
+  line-height: 25px;
+}
+
+/* ===================
+   Popups
+=================== */
+.popups {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.popup-content {
+  background: #fff;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.popup-scrollable {
+  overflow-y: auto;
+  max-height: 65vh;
+  padding-right: 5px;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.popup-content button {
+  margin: 0.5em;
+  padding: 0.5em 1.2em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.popup-content button:first-of-type {
+  background-color: #ff3366;
+  color: white;
+}
+
+.popup-content button:last-of-type {
+  background-color: #ccc;
+}
+
+@media (max-width: 600px) {
+  .popup-content {
+    width: 95%;
+    padding: 15px;
+  }
+  .popup-scrollable {
+    max-height: 60vh;
+  }
+  .popup-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ===================
+   Item List
+=================== */
+.item {
+  margin-bottom: 20px;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.item-img {
+  width: 100px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.item-details h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.item-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.item-controls {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-controls button {
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+
+/* ===================
+   Chatbox
+=================== */
+.chat-launcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #e91e63;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 28px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 50px !important;
+}
+
+.chatbox {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 360px;
+  max-height: 540px;
+  display: none;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1002;
+  margin-bottom: 60px !important;
+}
+
+.chatbox-header {
+  background: #e91e63;
+  color: white;
+  padding: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chatbox-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chatbox-footer {
+  border-top: 1px solid #eee;
+  padding: 10px;
+  background: white;
+}
+
+.chatbox-footer input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.chat-msg {
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  line-height: 1.4;
+}
+
+.chat-msg.user {
+  background: #e91e63;
+  color: white;
+  align-self: flex-end;
+}
+
+.chat-msg.bot {
+  background: #f1f1f1;
+  align-self: flex-start;
+}
+
+.suggestions {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 6px;
+}
+
+.suggestions button {
+  background: #f6f6f6;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.suggestions button:hover {
+  background: #ddd;
+}
+
+.chat-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 998;
+  display: none;
+}
+
+.chat-overlay.active {
+  display: block;
+}
+
+/* ===================
+   Misc
+=================== */
+.removeUnderline {
+  text-decoration: none;
+  color: #888;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.addToCartImage {
+  width: 200px !important;
+  border-radius: 25px !important;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
